@@ -35,5 +35,8 @@ agents-codex/           # Codex 에이전트
 
 ## Gotchas
 
-- `skills/research-en/` 파일을 직접 편집하면 `~/.claude/skills/` 에 재설치 필요.
-- EXA 웹 검색: `agents/web-search-agent.md` 참고 (`EXA_API_KEY` 환경변수 필요).
+- **재설치 필수**: `skills/research-en/` 를 직접 편집한 후 `cp -r skills/research-en/* ~/.claude/skills/` 재실행 안 하면 변경이 적용되지 않음.
+- **EXA 키 미설정 시**: `agents/web-search-agent.md` 의 웹 검색 에이전트가 작동 안 함 — `export EXA_API_KEY=<key>` 필수.
+- **스킬 설치 경로 혼동**: Claude Code 는 `~/.claude/skills/`, Codex 는 `~/.codex/agents/` — 설치 대상 플랫폼 확인 후 cp.
+- **research vs research-deep**: `/research` 는 1단계 outline 생성, `/research-deep` 는 outline 기반 심층 조사 — 순서 의존성 있음 (outline 없이 deep 실행 불가).
+- **중문 스킬 호환**: `skills/research-zh/` 는 Claude Code 전용, Codex 용은 `research-codex-zh/` 별도 — 혼용 금지.
