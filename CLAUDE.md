@@ -13,6 +13,9 @@ cp -r agents-codex/* ~/.codex/agents/
 
 # 설치 검증
 bash tests/test_install_codex.sh
+
+# EXA 웹검색 에이전트 활성화 (선택)
+export EXA_API_KEY=<your-key>   # ~/.zshrc 에 추가 권장
 ```
 
 ## 구조
